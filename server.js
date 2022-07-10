@@ -7,10 +7,10 @@ const app = express();
 require('dotenv').config();
 
 // mongoDB
-const { MongoClient } = require('mongodb');
-const URI = process.env.URI;
-global._database = process.env.DB;
-global._client = new MongoClient(URI, { useUnifiedTopology: true, sslValidate: false });
+// const { MongoClient } = require('mongodb');
+// const URI = process.env.URI;
+// global._database = process.env.DB;
+// global._client = new MongoClient(URI, { useUnifiedTopology: true, sslValidate: false });
 
 // morgan
 const morgan = require('morgan');
