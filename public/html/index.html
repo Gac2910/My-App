@@ -5,16 +5,41 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Guillermo Castillo</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="#">
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="germ-styles.css">
+	<link rel="stylesheet" href="background-effect.css">
+	<link rel="stylesheet" href="doc-styles.css">
 </head>
 <body>
 	
 	<div id="app">
+		<div id="particle-container">
+			<div v-for="(div, i) of 50" :key="i" class="particle"></div>
+		</div>
+		<app-header></app-header>
 
-		<h1>Guillermo Castillo - My App</h1>
-
+		<div id="content-wrapper">
+			<div class="container-fluid index-title">
+				<div class="row">
+					<div class="col">
+						<div class="index-title-divider"></div>
+						<div class="pad-1-top">
+							<h1 class="display-6 accent">Hello my name is</h1>
+							<h1 class="display-2 theme">Guillermo Castillo</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<app-footer></app-footer>
+		</div>
 	</div>
 
-	<script src="main.js"></script>
+	<script language="javascript" src="js/bootstrap.min.js"></script>
+	<script language="javascript" src="vue.global.js"></script>
+	<script language="javascript" src="vue-app.js" type="module"></script>
+	<script language="javascript" src="main.js"></script>
 </body>
 </html>

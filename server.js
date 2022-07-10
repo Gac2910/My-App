@@ -28,8 +28,13 @@ function normalizePort(val) {
 }
 const port = normalizePort(process.env.PORT || '5000');
 
-// ----- define public directory and routes -----
-app.use(express.static(__dirname + '/public'));
+// ----- define static file directories and routes -----
+app.use(express.static(__dirname + '/public/html'));
+app.use(express.static(__dirname + '/public/css'));
+app.use(express.static(__dirname + '/public/javascript'));
+app.use(express.static(__dirname + '/public/media'));
+app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
+app.use(express.static(__dirname + '/node_modules/vue/dist'));
 
 app.use('/', require('./routes/index'));
 app.use('/index', require('./routes/index'));
