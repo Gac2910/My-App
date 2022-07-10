@@ -26,7 +26,8 @@ function normalizePort(val) {
 	if (port >= 0) return port;
 	return false;
 }
-const port = normalizePort(process.env.PORT || '5000');
+const port = normalizePort(process.env.PORT || '5050');
+console.log('port: '+port);
 
 // ----- define static file directories and routes -----
 app.use(express.static(__dirname + '/public/html'));
