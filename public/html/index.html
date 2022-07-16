@@ -7,18 +7,17 @@
 	<title>Guillermo Castillo</title>
 	<link rel="shortcut icon" href="#">
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="germ-styles.css">
 	<link rel="stylesheet" href="background-effect.css">
 	<link rel="stylesheet" href="doc-styles.css">
 </head>
 <body>
-	
+	<div id="particle-container">
+		<div v-for="(div, i) of 50" :key="i" class="particle"></div>
+	</div>
 	<div id="app">
-		<div id="particle-container">
-			<div v-for="(div, i) of 50" :key="i" class="particle"></div>
-		</div>
 		<app-header></app-header>
-
 		<div id="content-wrapper">
 			<div class="container-fluid index-title">
 				<div class="row">

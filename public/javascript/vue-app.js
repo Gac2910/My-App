@@ -8,7 +8,11 @@ app.component('app-footer', footer)
 	.component('app-header', header)
 
 app.config.errorHandler = (err) => {
-	document.write(`Sorry something broke \n ${err}`);
+	console.error(`Something broke: \n${err}`);
 };
 
 app.mount('#app')
+
+// vue app only for backgroun particle effect
+const particleApp = Vue.createApp();
+particleApp.mount('#particle-container');

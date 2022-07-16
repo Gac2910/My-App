@@ -1,5 +1,19 @@
 #content-wrapper {
-	margin-top: 105px;
+	margin-top: 75px;
+}
+
+#particle-container {
+	animation-duration: 4s;
+	animation-name: particle-fade-in;
+}
+
+@keyframes particle-fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 #nav-header {
@@ -33,6 +47,26 @@ button.nav {
 	display: inline;
 }
 button.nav:hover { border-bottom: 1px solid var(--theme); }
+
+#side-menu-btn {
+	font-size: 25px;
+}
+
+#side-menu {
+	width: 0;
+	height: 0;
+	background-color: var(--accent);
+	color: white;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.show-side-menu {
+	width: 60vw !important;
+	height: 40vh !important;
+}
 
 /* ---------- index ---------- */
 .index-title {

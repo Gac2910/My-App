@@ -49,6 +49,8 @@ body, #app {
 .footer {
 	flex-shrink: 0;
 	padding: 20px;
+	margin: 0;
+	text-align: center;
 }
 
 body, html {
@@ -97,6 +99,7 @@ h6 {
 a {
 	color: var(--accent);
 	text-shadow: 2px 2px 2px black;
+	text-decoration: none;
 }
 
 a:hover {
