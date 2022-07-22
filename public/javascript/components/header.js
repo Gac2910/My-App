@@ -4,7 +4,6 @@ export default {
 		`<div class="container-fluid" id="nav-header">
 			<div class="row pad-3">
 				<div class="col">
-
 					<div v-if="navIsHidden" class="vert-align">
 						<button id="side-menu-btn" @click="toggleSideMenu()"><i class="fa fa-bars"></i></button>
 						<div id="side-menu"></div>

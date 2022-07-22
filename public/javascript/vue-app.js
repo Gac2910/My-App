@@ -1,11 +1,19 @@
-import root from './vue-root.js';
 import footer from './components/footer.js';
 import header from './components/header.js';
+import Home from './components/page-home.js';
 
-const app = Vue.createApp(root);
+const routes = [
+	{ path: '/', component: Home }
+];
 
-app.component('app-footer', footer)
-	.component('app-header', header)
+const router = VueRouter.createRouter({
+	history: VueRouter.createWebHashHistory(),
+	routes: routes
+});
+
+const app = Vue.createApp({})
+
+app.use(router)
 
 app.config.errorHandler = (err) => {
 	console.error(`Something broke: \n${err}`);

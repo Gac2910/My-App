@@ -74,7 +74,7 @@ button.nav:hover { border-bottom: 1px solid var(--theme); }
 	animation-duration: 4s;
 	animation-name: index-title-divider-fade-in;
 }
-.index-title-divider {
+.header-divider {
 	height: 1px;
 	padding: 0px;
 	background-color: var(--theme);
