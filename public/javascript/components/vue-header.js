@@ -1,5 +1,5 @@
 export default {
-	name: 'app-header',
+	name: 'VueHeader',
 	template: 
 		`<div class="container-fluid" id="nav-header">
 			<div class="row pad-3">
@@ -8,12 +8,12 @@ export default {
 						<button id="side-menu-btn" @click="toggleSideMenu()"><i class="fa fa-bars"></i></button>
 						<div id="side-menu"></div>
 					</div>
-					<div v-else class="vert-align">
-						<button class="nav">Home</button>
-						<button class="nav">About</button>
-						<button class="nav">Portfolio</button>
-						<button class="nav">Sandbox</button>
-						<button class="nav">Contact</button>
+					<div v-else>
+						<router-link to="/" class="nav">Home</router-link>
+						<router-link to="/about" class="nav">About</router-link>
+						<router-link to="/portfolio" class="nav">Portfolio</router-link>
+						<router-link to="/sandbox" class="nav">Sandbox</router-link>
+						<router-link to="/contact" class="nav">Contact</router-link>
 					</div>
 				</div>
 			</div>

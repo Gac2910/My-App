@@ -36,6 +36,7 @@ app.use(express.static(__dirname + '/public/media'));
 app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
 app.use(express.static(__dirname + '/node_modules/font-awesome/css'));
 app.use(express.static(__dirname + '/node_modules/vue/dist'));
+app.use(express.static(__dirname + '/node_modules/vue-router/dist'));
 
 app.use('/', require('./routes/index'));
 app.use('/index', require('./routes/index'));

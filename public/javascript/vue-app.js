@@ -1,26 +1,35 @@
-import footer from './components/footer.js';
-import header from './components/header.js';
-import Home from './components/page-home.js';
+
+// ----- set up router -----
+import Home from './pages/page-home.js';
 
 const routes = [
 	{ path: '/', component: Home }
 ];
 
 const router = VueRouter.createRouter({
-	history: VueRouter.createWebHashHistory(),
+	history: VueRouter.createWebHistory(),
 	routes: routes
 });
 
-const app = Vue.createApp({})
+// ----- set up root app -----
+import VueFooter from './components/vue-footer.js';
+import VueHeader from './components/vue-header.js';
 
-app.use(router)
+const app = Vue.createApp({
+	components: {
+		VueFooter,
+		VueHeader
+	}
+});
+
+app.use(router);
 
 app.config.errorHandler = (err) => {
 	console.error(`Something broke: \n${err}`);
 };
 
-app.mount('#app')
+app.mount('#app');
 
-// vue app only for backgroun particle effect
+// seperate vue app for background particle effect
 const particleApp = Vue.createApp();
 particleApp.mount('#particle-container');

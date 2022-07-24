@@ -1,5 +1,5 @@
 export default {
-	name: 'app-footer',
+	name: 'VueFooter',
 	template: 
 		`<div class="container-fluid" id="flying-footer-content">
 			<div class="row">

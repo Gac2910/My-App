@@ -1,7 +1,8 @@
 export default {
-	name: 'page-home',
+	name: 'HomePage',
 	template: 
-		`<div class="container-fluid index-title">
+		`<div class="header-divider"></div>
+		<div class="container-fluid index-title">
 			<div class="row">
 				<div class="col">
 					<div class="pad-1-top">
@@ -10,8 +11,7 @@ export default {
 					</div>
 				</div>
 			</div>
-		</div>`
-	,
+		</div>`,
 	data() {
 		return {
 

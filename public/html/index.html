@@ -17,18 +17,18 @@
 		<div v-for="(div, i) of 50" :key="i" class="particle"></div>
 	</div>
 	<div id="app">
-		<app-header></app-header>
 		<div id="content-wrapper">
-			<div class="header-divider"></div>
+			<vue-header></vue-header>
 			<router-view></router-view>
 		</div>
 		<div class="footer">
-			<app-footer></app-footer>
+			<vue-footer></vue-footer>
 		</div>
 	</div>
 
 	<script language="javascript" src="js/bootstrap.min.js"></script>
 	<script language="javascript" src="vue.global.js"></script>
+	<script language="javascript" src="vue-router.global.js"></script>
 	<script language="javascript" src="vue-app.js" type="module"></script>
 	<script language="javascript" src="main.js"></script>
 </body>

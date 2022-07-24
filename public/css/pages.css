@@ -17,7 +17,8 @@
 }
 
 #nav-header {
-	position: fixed;
+	position: absolute;
+	top: 0;
 	z-index: 1000;
 	animation-duration: 2s;
 	animation-name: header-slide-in;
@@ -34,7 +35,7 @@
 	}
 }
 
-button.nav {
+a.nav {
 	color: white;
 	font-size: 20px;
 	font-weight: 200;
@@ -46,7 +47,7 @@ button.nav {
 	padding: 10px 30px;
 	display: inline;
 }
-button.nav:hover { border-bottom: 1px solid var(--theme); }
+a.nav:hover { border-bottom: 1px solid var(--theme); }
 
 #side-menu-btn {
 	font-size: 25px;
