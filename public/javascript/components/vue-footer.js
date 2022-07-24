@@ -4,7 +4,7 @@ export default {
 		`<div class="container-fluid" id="flying-footer-content">
 			<div class="row">
 				<div class="col-4">
-					<a href="#">
+					<a href="/guillermo-resume.docx" download>
 						<span>
 							<i class="fa fa-download" aria-hidden="true"></i> 
 							Resume

@@ -1,5 +1,5 @@
 #content-wrapper {
-	margin-top: 75px;
+	margin-top: 50px;
 }
 
 #particle-container {
@@ -17,11 +17,15 @@
 }
 
 #nav-header {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	z-index: 1000;
 	animation-duration: 2s;
 	animation-name: header-slide-in;
+}
+
+#nav-header.opaque-nav {
+	background-color: rgba(0, 0, 0, 0.25);
 }
 
 @keyframes header-slide-in {
@@ -36,7 +40,6 @@
 }
 
 a.nav {
-	color: white;
 	font-size: 20px;
 	font-weight: 200;
 	letter-spacing: 1px;
@@ -46,11 +49,23 @@ a.nav {
 	box-shadow: none;
 	padding: 10px 30px;
 	display: inline;
+	outline: none;
 }
 a.nav:hover { border-bottom: 1px solid var(--theme); }
 
+a.router-link-active {
+	border-bottom: 1px solid var(--theme);
+}
+
 #side-menu-btn {
+	background: transparent;
+	color: var(--accent);
+	border: none;
 	font-size: 25px;
+	outline: none;
+}
+#side-menu-btn:hover {
+	color: var(--accent-btn-hover);
 }
 
 #side-menu {
@@ -58,15 +73,56 @@ a.nav:hover { border-bottom: 1px solid var(--theme); }
 	height: 0;
 	background-color: var(--accent);
 	color: white;
-	border-radius: 50%;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
+	transition: all .2s ease-in-out;
+	z-index: 100;
 }
 
 .show-side-menu {
-	width: 60vw !important;
-	height: 40vh !important;
+	width: 200px !important;
+	height: 100vh !important;
+}
+
+#side-menu .nav {
+	color: white;
+	display: none;
+	border: none;
+}
+
+#side-menu.show-side-menu .nav {
+	display: block;
+	animation-duration: 1s;
+	animation-name: index-title-divider-fade-in;
+}
+
+#side-menu a.router-link-active {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+#side-menu.show-side-menu a:hover {
+	color: black;
+}
+
+#side-menu-btn-close {
+	background: transparent;
+	color: white;
+	border: none;
+	font-size: 25px;
+	outline: none;
+	display: none;
+}
+#side-menu.show-side-menu #side-menu-btn-close {
+	display: block;
+	height: 50px;
+	margin-left: 25px;
+	margin-top: 4px;
+	animation-duration: 1s;
+	animation-name: index-title-divider-fade-in;
+}
+#side-menu.show-side-menu #side-menu-btn-close:hover {
+	color: black;
 }
 
 /* ---------- index ---------- */
@@ -106,4 +162,9 @@ a.nav:hover { border-bottom: 1px solid var(--theme); }
 		right: 0;
 		opacity: 1
 	}
+}
+
+.pretty-img {
+	box-shadow: 2px 2px 4px black; 
+	border-radius:10px;
 }

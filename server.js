@@ -19,6 +19,10 @@ app.use(morgan('dev'));
 // json parser
 app.use(express.json());
 
+// middleware to work with vue web history mode
+const history = require('connect-history-api-fallback');
+app.use(history());
+
 // ----- initialize port -----
 function normalizePort(val) {
 	const port = parseInt(val, 10);

@@ -6,7 +6,14 @@ export default {
 				<div class="col">
 					<div v-if="navIsHidden" class="vert-align">
 						<button id="side-menu-btn" @click="toggleSideMenu()"><i class="fa fa-bars"></i></button>
-						<div id="side-menu"></div>
+						<div id="side-menu">
+							<button id="side-menu-btn-close" @click="toggleSideMenu()"><i class="fa fa-bars"></i></button>
+							<router-link to="/" class="nav">Home</router-link>
+							<router-link to="/about" class="nav">About</router-link>
+							<router-link to="/portfolio" class="nav">Portfolio</router-link>
+							<router-link to="/sandbox" class="nav">Sandbox</router-link>
+							<router-link to="/contact" class="nav">Contact</router-link>
+						</div>
 					</div>
 					<div v-else>
 						<router-link to="/" class="nav">Home</router-link>
@@ -23,6 +30,7 @@ export default {
 		return {
 			navIsHidden: false,
 			sideMenuIsHidden: true,
+			headerScrollStyle: false
 		}
 	},
 	methods: {
@@ -70,5 +78,18 @@ export default {
 				}
 			}, true);
 		}
+		window.addEventListener('scroll', function() {
+			let scrollPos = document.documentElement.scrollTop;
+			if (scrollPos > 0 && !self.headerScrollStyle) {
+				self.headerScrollStyle = true;
+				document.querySelector('#nav-header').classList.add('opaque-nav');
+				document.querySelector('.header-divider').style.visibility = 'hidden';
+			}
+			else if (scrollPos <= 0 && self.headerScrollStyle) {
+				self.headerScrollStyle = false;
+				document.querySelector('#nav-header').classList.remove('opaque-nav');
+				document.querySelector('.header-divider').style.visibility = 'visible';
+			}
+		});
 	}
 }
