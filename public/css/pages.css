@@ -72,7 +72,7 @@ a.nav:hover { border-bottom: 1px solid var(--theme); }
 /* ---------- index ---------- */
 .index-title {
 	text-align: center;
-	animation-duration: 4s;
+	animation-duration: 2s;
 	animation-name: index-title-divider-fade-in;
 }
 .header-divider {

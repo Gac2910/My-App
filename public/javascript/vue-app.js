@@ -1,9 +1,17 @@
 
 // ----- set up router -----
 import Home from './pages/page-home.js';
+import About from './pages/page-about.js';
+import Portfolio from './pages/page-portfolio.js';
+import Sandbox from './pages/page-sandbox.js';
+import Contact from './pages/page-contact.js';
 
 const routes = [
-	{ path: '/', component: Home }
+	{ path: '/', component: Home },
+	{ path: '/about', component: About },
+	{ path: '/portfolio', component: Portfolio },
+	{ path: '/sandbox', component: Sandbox },
+	{ path: '/contact', component: Contact }
 ];
 
 const router = VueRouter.createRouter({
