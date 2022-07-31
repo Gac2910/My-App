@@ -165,6 +165,9 @@ a.router-link-active {
 }
 
 .pretty-img {
+	width: 100%;
+	display:block;
+	margin:10px auto;
 	box-shadow: 2px 2px 4px black; 
 	border-radius:10px;
 }

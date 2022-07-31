@@ -10,14 +10,14 @@ export default {
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-6">
-					<span id="portrait-container">
-						<img src="/portrait.jpg" height="500" class="pretty-img" style="margin-top:10px">
-					</span>
+				<div class="col-md-6">
+					<div id="portrait-container">
+						<img src="/portrait.jpg" height="400" class="pretty-img">
+					</div>
 				</div>
-				<div class="col-lg-6">
+				<div class="col-md-6">
 					<h1 class="display-6 accent">About Me</h1>
-					<p>
+					<p style="font-size:75%">
 						&emsp; My name is Guillermo Castillo. I was raised in South West Florida, my family consists of a mom, a sister and 2 cats.
 						There is only so much you can say in a paragraph, but in a nutshell i'm a very curious person; since I was young
 						I enjoyed learning about aircrafts, engines, electronics, astronomy, nature, history, music and more.
@@ -32,10 +32,10 @@ export default {
 					</p>
 				</div>
 			</div>
-			<div class="row flex-column-reverse flex-lg-row">
-				<div class="col-lg-7">
+			<div class="row flex-column-reverse flex-md-row">
+				<div class="col-md-7">
 					<h3 class="display-6 accent">About This Page</h3>
-					<p>
+					<p style="font-size:75%">
 						This is a personal page that is home to my online portfolio and personal projects.
 						This is where I test ideas and practice my skills. This is a single page application using the MEVN (MongoDB, Express, Vue, Node) development stack.
 						I enjoy using Vue for it's progressive and lightweight nature. Vue is being used without a build step to work more easily with Heroku.
@@ -45,7 +45,7 @@ export default {
 						And of course the contact tab allows for anyone to reach out to me with inquires or issues with the web page.
 					</p>
 				</div>
-				<div class="col-lg-5">
+				<div class="col-md-5">
 					<img src="/mevn.jpg" height="250" class="pretty-img" style="margin-top:40px">
 				</div>
 			</div>

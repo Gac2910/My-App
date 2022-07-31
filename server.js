@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 
 // ----- initialize dependencies and middleware -----
+
 // dotenv
 require('dotenv').config();
 
@@ -42,8 +43,7 @@ app.use(express.static(__dirname + '/node_modules/font-awesome/css'));
 app.use(express.static(__dirname + '/node_modules/vue/dist'));
 app.use(express.static(__dirname + '/node_modules/vue-router/dist'));
 
-app.use('/', require('./routes/index'));
-app.use('/index', require('./routes/index'));
+app.use('/api', require('./routes/api'));
 
 // ----- start listening -----
 app.listen(port, () => {

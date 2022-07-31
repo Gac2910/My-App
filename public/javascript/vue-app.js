@@ -27,6 +27,47 @@ const app = Vue.createApp({
 	components: {
 		VueFooter,
 		VueHeader
+	},
+	data() {
+		return {
+			serverError: false
+		}
+	},
+	methods: {
+		pingServer() {
+			let self = this;
+			setTimeout(() => {
+				let request = new Request('/api/ping', {
+					method: 'post',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ping: true})
+				});
+				fetch(request)
+				.then(response => {
+					if (response.ok) {
+						response.json().then(json => {
+							if (json.pong) console.log(json);
+							else {
+								self.serverError = true;
+								console.error(json);
+							}
+						});
+					}
+					else {
+						self.serverError = true;
+						console.error(response);
+					}
+				}).catch(err => {
+					self.serverError = true;
+					console.error(err)
+				});
+				
+				self.pingServer();
+			}, 60000);
+		}
+	},
+	mounted() {
+		this.pingServer();
 	}
 });
 
