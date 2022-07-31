@@ -35,13 +35,13 @@ export default {
 	methods: {
 		togglePingMessage(success, time) {
 			if (success) {
-				this.pingMessage = `Ping Successful ~ ${time} ms`;
+				this.pingMessage = `Ping Successful ~ ${time.toFixed(0)} ms`;
 				setTimeout(() => {
 					this.pingMessage = `Ping Server`;
 				}, 3000);
 			}
 			else {
-				this.pingMessage = `Ping Failed ~ ${time} ms`;
+				this.pingMessage = `Ping Failed ~ ${time.toFixed(0)} ms`;
 				setTimeout(() => {
 					this.pingMessage = `Ping Server`;
 				}, 3000);
@@ -55,7 +55,7 @@ export default {
 				body: JSON.stringify({ping: true})
 			});
 			let self = this;
-			let start = window.performance.now().toFixed(2);
+			let start = window.performance.now();
 			fetch(request)
 			.then(response => {
 				let time = window.performance.now() - start;
