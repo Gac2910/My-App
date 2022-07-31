@@ -33,17 +33,17 @@ export default {
 
 	},
 	methods: {
-		togglePingMessage(success) {
+		togglePingMessage(success, time) {
 			if (success) {
-				this.pingMessage = 'Ping Successful';
+				this.pingMessage = `Ping Successful ~ ${time} ms`;
 				setTimeout(() => {
-					this.pingMessage = 'Ping Server';
+					this.pingMessage = `Ping Server`;
 				}, 3000);
 			}
 			else {
-				this.pingMessage = 'Ping Failed';
+				this.pingMessage = `Ping Failed ~ ${time} ms`;
 				setTimeout(() => {
-					this.pingMessage = 'Ping Server';
+					this.pingMessage = `Ping Server`;
 				}, 3000);
 			}
 		},
@@ -55,27 +55,30 @@ export default {
 				body: JSON.stringify({ping: true})
 			});
 			let self = this;
+			let start = window.performance.now();
 			fetch(request)
 			.then(response => {
+				let time = window.performance.now() - start;
 				if (response.ok) {
 					response.json().then(json => {
 						if (json.pong) {
-							self.togglePingMessage(true);
+							self.togglePingMessage(true, time);
 							console.log(json);
 						}
 						else {
-							self.togglePingMessage(false);
+							self.togglePingMessage(false, time);
 							console.error(json);
 						}
 					});
 				}
 				else {
-					self.togglePingMessage(false);
+					self.togglePingMessage(false, time);
 					console.error(response);
 				}
 			}).catch(err => {
-				self.togglePingMessage(false);
-				console.error(err)
+				let time = window.performance.now() - start;
+				self.togglePingMessage(false, time);
+				console.error(err);
 			});
 		}
 	},
