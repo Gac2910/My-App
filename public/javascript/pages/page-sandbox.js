@@ -55,7 +55,7 @@ export default {
 				body: JSON.stringify({ping: true})
 			});
 			let self = this;
-			let start = window.performance.now();
+			let start = window.performance.now().toFixed(2);
 			fetch(request)
 			.then(response => {
 				let time = window.performance.now() - start;
