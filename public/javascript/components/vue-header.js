@@ -6,7 +6,11 @@ export default {
 				<div class="col">
 					<div v-if="navIsHidden" class="vert-align">
 						<button id="side-menu-btn" @click="toggleSideMenu()"><i class="fa fa-bars"></i></button>
-						<span style="float:right">{{ currentPage }}</span>
+						<span 
+							style="font-size:125%;font-weight:300;float:right;letter-spacing:2px;cursor:pointer"
+							@click="() => window.location.reload(false)">
+							{{ currentPage }}
+						</span>
 						<div id="side-menu">
 							<button id="side-menu-btn-close" @click="toggleSideMenu()"><i class="fa fa-bars"></i></button>
 							<router-link to="/" class="nav" @click="pageChange('Home')">Home</router-link>
@@ -32,7 +36,8 @@ export default {
 			navIsHidden: false,
 			sideMenuIsHidden: true,
 			headerScrollStyle: false,
-			currentPage: 'Home'
+			currentPage: 'Home',
+			window
 		}
 	},
 	methods: {

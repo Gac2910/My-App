@@ -1,5 +1,8 @@
 export default {
 	name: 'SandboxPage',
+	components: {
+		
+	},
 	template: 
 		`<div class="header-divider"></div>
 		<div class="container-fluid index-title">
@@ -48,7 +51,6 @@ export default {
 			}
 		},
 		manualPing() {
-
 			let request = new Request('/api/ping', {
 				method: 'post',
 				headers: { 'Content-Type': 'application/json' },
