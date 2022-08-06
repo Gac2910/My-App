@@ -17,8 +17,16 @@
 		<div v-for="(div, i) of 50" :key="i" class="particle"></div>
 	</div>
 	<div id="app">
-		<div id="content-wrapper">
-			<vue-header></vue-header>
+		<div id="content-wrapper" :style="{ 'margin-top': headerMargins.contentWrapper }">
+			<div v-if="serverError" id="serverErrorContainer">
+				<p class="m-0">
+					Sorry, something has broken.
+					<a href="mailto:gac2910@gmail.com? &subject=Your Page Is Broken! &body=Go fix your page!">
+						Click here to make me fix it.
+					</a>
+				</p>
+			</div>
+			<vue-header :style="{ 'margin-top': headerMargins.header }"></vue-header>
 			<router-view></router-view>
 		</div>
 		<div class="footer">

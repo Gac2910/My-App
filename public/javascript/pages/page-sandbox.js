@@ -51,19 +51,19 @@ export default {
 			}
 		},
 		manualPing() {
-			let request = new Request('/api/ping', {
+			let req = new Request('/api/ping', {
 				method: 'post',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ping: true})
+				body: JSON.stringify({ request: 'ping' })
 			});
 			let self = this;
 			let start = window.performance.now();
-			fetch(request)
-			.then(response => {
+			fetch(req)
+			.then(res => {
 				let time = window.performance.now() - start;
-				if (response.ok) {
-					response.json().then(json => {
-						if (json.pong) {
+				if (res.ok) {
+					res.json().then(json => {
+						if (json.response === 'pong') {
 							self.togglePingMessage(true, time);
 							console.log(json);
 						}

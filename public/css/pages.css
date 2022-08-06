@@ -1,7 +1,3 @@
-#content-wrapper {
-	margin-top: 50px;
-}
-
 #particle-container {
 	animation-duration: 4s;
 	animation-name: particle-fade-in;
@@ -119,6 +115,14 @@ a.router-link-active {
 }
 
 /* ---------- index ---------- */
+#serverErrorContainer {
+	background: rgba(255, 0, 0, 0.15);
+	width: 100%;
+	position: absolute;
+	top: 0;
+	letter-spacing: 0px;
+	font-weight: 100;
+}
 .index-title {
 	text-align: center;
 	animation-duration: 2s;

@@ -23,7 +23,7 @@ const router = VueRouter.createRouter({
 import VueFooter from './components/vue-footer.js';
 import VueHeader from './components/vue-header.js';
 
-const app = Vue.createApp({
+const vueApp = Vue.createApp({
 	components: {
 		VueFooter,
 		VueHeader
@@ -33,51 +33,56 @@ const app = Vue.createApp({
 			serverError: false
 		}
 	},
+	computed: {
+		headerMargins() {
+			if (this.serverError) 
+				return { contentWrapper: '100px', header: '50px' };
+			else 
+				return { contentWrapper: '50px', header: '0px' };
+		}
+	},
 	methods: {
-		pingServer() {
+		pingServer(initialPing) {
 			let self = this;
-			setTimeout(() => {
-				let request = new Request('/api/ping', {
-					method: 'post',
-					headers: { 'Content-Type': 'application/json' },
-					body: JSON.stringify({ping: true})
-				});
-				fetch(request)
-				.then(response => {
-					if (response.ok) {
-						response.json().then(json => {
-							if (json.pong) console.log(json);
-							else {
-								self.serverError = true;
-								console.error(json);
-							}
-						});
-					}
-					else {
-						self.serverError = true;
-						console.error(response);
-					}
-				}).catch(err => {
+			let req = new Request('/api/ping', {
+				method: 'post',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ request: 'ping', initialPing })
+			});
+			fetch(req)
+			.then(res => {
+				if (res.ok) {
+					res.json().then(json => {
+						if (json.response === 'pong') console.log(json);
+						else {
+							self.serverError = true;
+							console.error(json);
+						}
+					});
+				}
+				else {
 					self.serverError = true;
-					console.error(err)
-				});
-				
-				self.pingServer();
-			}, 60000);
+					console.error(res);
+				}
+			}).catch(err => {
+				self.serverError = true;
+				console.error(err)
+			});
+			setTimeout(() => self.pingServer(), 180000);
 		}
 	},
 	mounted() {
-		this.pingServer();
+		setTimeout(() => this.pingServer(true), 5000);
 	}
 });
 
-app.use(router);
+vueApp.use(router);
 
-app.config.errorHandler = (err) => {
+vueApp.config.errorHandler = (err) => {
 	console.error(`Something broke: \n${err}`);
 };
 
-app.mount('#app');
+vueApp.mount('#app');
 
 // seperate vue app for background particle effect
 const particleApp = Vue.createApp();

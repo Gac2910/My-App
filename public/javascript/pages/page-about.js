@@ -51,7 +51,7 @@ export default {
 					</p>
 				</div>
 				<div class="col-lg-5">
-					<img src="/mevn.jpg" height="250" class="pretty-img" style="margin-top:40px">
+					<img src="/mevn.jpg" height="225" class="pretty-img" style="margin-top:40px">
 				</div>
 			</div>
 		</div>`,
